@@ -11,7 +11,7 @@ body {
   height: 100%;
 }
 body {
-  background: #e6e6e6;
+  background: #ffffff;
   font-family:"behdad","yekan",arial;
 }
 /* The container */
@@ -78,4 +78,56 @@ body {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+.scroll
+{   padding-right: 35px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    padding-left: 35px;
+    height:250px;
+    width:250px;
+    border:1px solid #ccc;
+    font:16px/26px Georgia, Garamond, Serif;
+    overflow:auto;
+    font-family:"behdad","yekan",arial;
+
+}
+
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    outline: none;
+    padding-right: 35px;
+    padding-left: 35px;
+    font-family:"behdad","yekan",arial;
+
+
+}
+input[type=submit] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    outline: none;
+    padding-right: 35px;
+    padding-left: 35px;
+    font-family:"behdad","yekan",arial;
+
+
+}
+input[type=submit]:hover
+{
+    border: 1px solid #2b7703;
+    background-color: lightgreen;
+
+
+
+}
+input[type=text]:focus {
+    background-color: lightblue;
 }
