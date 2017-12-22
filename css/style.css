@@ -117,17 +117,24 @@ input[type=submit] {
     padding-right: 35px;
     padding-left: 35px;
     font-family:"behdad","yekan",arial;
+    font-size: 22px;
+    background-color: lightgreen;
 
 
 }
 input[type=submit]:hover
 {
     border: 1px solid #2b7703;
-    background-color: lightgreen;
+    background-color: green;
 
 
 
 }
 input[type=text]:focus {
     background-color: lightblue;
+}
+img.size{
+
+    height:300px;
+    width:300px;
 }
