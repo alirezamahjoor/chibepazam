@@ -36,7 +36,7 @@ $primary=mysqli_fetch_all($primary_query,MYSQLI_ASSOC);
 foreach($primary as $item){
 ?>
     <label class="container"><?php echo $item['name']; ?>
-    <input type="checkbox" name="ingredient[]" value="<?php echo $item['name']; ?>" >
+    <input type="checkbox" name="ingredient[]" value="<?php echo $item['id']; ?>" >
     <span class="checkmark"></span>
 
     </label>
@@ -66,16 +66,16 @@ foreach($primary as $item){
 <input type="submit" name="search" value="پیشنهاد غذا" >
 
     </form>
-    <?php if(@$_POST['submit'])
-        $count=0;
-        $count=     count(@$_POST['ingredient']);
-        $name= @$_POST['ingredient'];
-        print_r($_POST['ingredient']);
-        print_r(json_encode($name));
-echo $count;
-//$food_query=mysqli_query($connect,"SELECT name FROM t_food WHERE ingredient in('$name')");
-//$food=mysqli_fetch_all($food_query,MYSQLI_ASSOC);
-//echo count($food);
+<?php
+if(@$_POST['search'])
+{
+    $arr1=str_split(json_encode($_POST['ingredient']));
+    print_r($arr1);
+
+
+
+}
+
 ?>
 </td>
 </tr>
