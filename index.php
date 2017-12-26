@@ -69,10 +69,13 @@ foreach($primary as $item){
 <?php
 if(@$_POST['search'])
 {
-    $arr1=str_split(json_encode($_POST['ingredient']));
-    print_r($arr1);
+    $ingredient=@$_POST['ingredient'];
+    echo count(@$ingredient);
+    echo "<br><pre>";
+    print_r(@$ingredient);
 
-
+$j_en=json_encode($ingredient);
+echo $j_en;
 
 }
 

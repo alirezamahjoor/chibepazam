@@ -20,23 +20,27 @@ include '../db.php';
     <tr>
         <td align="center">
 
-            <h1 style="background-color:lightgreen"> ثبت مواد اولیه </h1>
+            <h1 style="background-color:lightgreen"> قصد انجام چه کاری داری؟ </h1>
         <td >
         </td>
         <tr><td>
             <div class="scroll">
                 <form action="#" method="post">
-                    <div align="right"> <label for="fname" >نام ماده تشکیل دهنده غذا</label>
-                    <input type="text" id="" name="fname" value="" dir="rtl">
-                    </div>
-                    <input type="submit" value="ثبت" name="sabt">
 
+                    <input type="submit" value="ثبت ماده اولیه" name="sabt_ing">
+
+                    <input type="submit" value=" ثبت غذا" name="sabt_food">
 
                 </form>
                 <?php
-                if(@$_POST['sabt'])
-                {                $sabt_query=mysqli_query($connect,"INSERT INTO t_primary(name) VALUES('$_POST[fname]')");
-                echo "<br><div align=right>".'با موفقیت ثبت شد'."</div>";
+                if(@$_POST['sabt_ing'])
+                {
+                header('location: ingredient.php');
+                }
+
+                if(@$_POST['sabt_food'])
+                {
+                    header('location: food.php');
                 }
 
                 ?>
