@@ -26,21 +26,23 @@ include '../db.php';
         </tr>
         <tr>
             <td>
-                <div class="scroll">
+
                     <form action="#" method="post">
                         <div align="right"> <label for="fname" >نام غذا</label>
                             <input type="text" id="" name="fname" value="" dir="rtl">
                         </div>
 
-                    </form>
-
-
-                    <form action="#" method="post">
+             </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="scroll">
                         <?php
                         $primary_query=mysqli_query($connect,"SELECT id,name FROM t_primary");
                         $primary=mysqli_fetch_all($primary_query,MYSQLI_ASSOC);
                         foreach($primary as $item){
                             ?>
+
                             <label class="container"><?php echo $item['name']; ?>
                                 <input type="checkbox" name="ingredient[]" value="<?php echo $item['id']; ?>" >
                                 <span class="checkmark"></span>
@@ -54,18 +56,20 @@ include '../db.php';
             </td>
         </tr>
         <tr>
-            <td>
-                <div class="scroll">
+            <td height="50" width="50">
+
                 <input type="submit" value="ثبت" name="sabt">
-                <input type="submit" value="بازگشت به صفحه اصلی" name="return">
+                <div align="center">
+                <a href="index.php" >بازگشت به صفحه اصلی</a></div>
+                </form>
                     <?php
                     if(@$_POST['sabt'])
-                    {                $sabt_query=mysqli_query($connect,"INSERT INTO t_primary(name) VALUES('$_POST[fname]')");
+                    {   $ingredient=json_encode(@$_POST['ingredient']);
+                        $sabt_query=mysqli_query($connect,"INSERT INTO t_food(name,ingredient) VALUES('$_POST[fname]','$ingredient')");
                         echo "<br><div align=right>".'با موفقیت ثبت شد'."</div>";
                     }
-
                     ?>
-                </div>
+
             </td>
         </tr>
     </table>

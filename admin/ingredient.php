@@ -31,18 +31,17 @@ include '../db.php';
                         </div>
                         <input type="submit" value="ثبت" name="sabt">
 
-                        <input type="submit" value="بازگشت به صفحه اصلی" name="return">
+                        <div align="center">
+                            <a href="index.php" >بازگشت به صفحه اصلی</a></div>
 
                     </form>
                     <?php
                     if(@$_POST['sabt'])
-                    {                $sabt_query=mysqli_query($connect,"INSERT INTO t_primary(name) VALUES('$_POST[fname]')");
+                    {
+                        $sabt_query=mysqli_query($connect,"INSERT INTO t_primary(name) VALUES('$_POST[fname]')");
                         echo "<br><div align=right>".'با موفقیت ثبت شد'."</div>";
                     }
-                    if(@$_POST['return'])
-                    {
-                        header('location:index.php');
-                    }
+
 
                     ?>
                 </div>
