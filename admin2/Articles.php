@@ -81,7 +81,6 @@ foreach ($news as $item){
                                                 $user_id=$item['user_id'];
 $user_query=mysqli_query($connect,"SELECT fullname FROM t_user INNER JOIN t_food ON '$user_id'=t_user.id");
 $user=mysqli_fetch_assoc($user_query);
-
 echo $user['fullname'];
 
                                                 ?>
@@ -91,17 +90,24 @@ echo $user['fullname'];
 <?php echo jdate('Y/m/d',strtotime($item['create_time'])); ?>
                                             </td>
                                             <td class="col-md-1">
-                                                <a href="#">
+
                                                     <?php
 
 
-echo $item['ingredient'];
+
+                                                    $ingredient=json_decode($item['ingredient']);
+                                                    for($i=0;$i<count($ingredient);$i++)
+                                                    {
+                                                        $food_query=mysqli_query($connect,"SELECT name FROM t_primary WHERE id='$ingredient[$i]'");
+                                                        $food=mysqli_fetch_assoc($food_query);
+                                                        echo $food['name'].". ";
+                                                    }
 
 
 
                                                     ?>
 
-                                                </a>
+
                                             </td>
 
                                             <td class="col-md-4">
